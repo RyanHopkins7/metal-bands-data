@@ -1,0 +1,25 @@
+<html>
+<body>
+  
+  <script src="metal.js"></script>
+  <script>
+    //Scripts here
+    const body = document.querySelector('body');
+
+    const fans = metal.map((band, i) => {
+      return Number(band.fans)
+    })
+
+    metal.forEach((band, i) => {
+      const el = document.createElement('div');
+      el.style = "background-color: red; padding: 10px; margin: 2px; border-radius: 0px 100px 100px 0px;";
+
+      el.style.width = (band.fans - 1084) / (4095 - 1084) * 90 + "%"
+      el.innerHTML = `Name: ${band.band_name}`;
+      body.appendChild(el);
+    });
+
+
+  </script>
+</body>
+</html>
